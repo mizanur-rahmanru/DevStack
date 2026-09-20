@@ -7,6 +7,7 @@ import StackSidebar from "./components/StackSidebar";
 import type { Technology } from "./types";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "./components/Footer";
 function App() {
   const [technologies, setTechnologies] = useState<Technology[]>(
     []
@@ -102,6 +103,7 @@ const handleRemoveAll = () => {
           </div>
         </section>
       )}
+      <Footer />
     </>
   );
 }
