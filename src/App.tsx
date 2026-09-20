@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
 
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TechnologySection from "./components/TechnologySection";
 import StackSidebar from "./components/StackSidebar";
-
 import type { Technology } from "./types";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   const [technologies, setTechnologies] = useState<Technology[]>(
     []
@@ -25,33 +25,54 @@ function App() {
       });
   }, []);
 
-  const handleAddToStack = (technology: Technology) => {
-    const alreadyExists = stack.some(
-      (item) => item.id === technology.id
-    );
+ const handleAddToStack = (technology: Technology) => {
+  const alreadyExists = stack.some(
+    (item) => item.id === technology.id
+  );
 
-    if (alreadyExists) {
-      return;
-    }
+  if (alreadyExists) {
+    toast.warning(`${technology.name} is already in your stack!`);
+    return;
+  }
 
-    setStack((previousStack) => [
-      ...previousStack,
-      technology,
-    ]);
-  };
+  setStack((previousStack) => [
+    ...previousStack,
+    technology,
+  ]);
 
-  const handleRemoveFromStack = (id: string) => {
-    setStack((previousStack) =>
-      previousStack.filter((item) => item.id !== id)
-    );
-  };
+  toast.success(`${technology.name} added to your stack!`);
+};
 
-  const handleRemoveAll = () => {
-    setStack([]);
-  };
+const handleRemoveFromStack = (id: string) => {
+  const removedTechnology = stack.find(
+    (item) => item.id === id
+  );
+
+  setStack((previousStack) =>
+    previousStack.filter((item) => item.id !== id)
+  );
+
+  if (removedTechnology) {
+    toast.info(`${removedTechnology.name} removed from your stack.`);
+  }
+};
+const handleRemoveAll = () => {
+  if (stack.length === 0) {
+    toast.info("Your stack is already empty.");
+    return;
+  }
+
+  setStack([]);
+  toast.success("All technologies removed from your stack!");
+};
 
   return (
     <>
+      <ToastContainer
+      position="top-right"
+      autoClose={2000}
+      theme="dark"
+      />
       <Navbar />
 
       <Hero />
