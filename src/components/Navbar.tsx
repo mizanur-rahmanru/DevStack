@@ -9,10 +9,7 @@ function Navbar() {
         </button>
 
         {/* Logo */}
-        <a href="#" className="brand">
-          <span className="brand-logo">DS</span>
-          <span className="brand-name">Dev Stack</span>
-        </a>
+        <img src="/src/assets/logo-text.png" alt="" />
 
         {/* Desktop Navigation */}
         <nav className="nav-links">
