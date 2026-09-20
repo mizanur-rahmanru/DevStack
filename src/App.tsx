@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import TechnologySection from "./components/TechnologySection";
 import type { Technology } from "./types";
 
 function App() {
@@ -19,15 +20,16 @@ function App() {
   return (
     <>
       <Navbar />
+
       <Hero />
 
-      <div>
-        {loading ? (
-          <p>Loading technologies...</p>
-        ) : (
-          <p>{technologies.length} technologies loaded</p>
-        )}
-      </div>
+      {loading ? (
+        <div className="loading">
+          Loading technologies...
+        </div>
+      ) : (
+        <TechnologySection technologies={technologies} />
+      )}
     </>
   );
 }
