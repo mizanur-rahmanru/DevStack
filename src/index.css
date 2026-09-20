@@ -585,3 +585,262 @@ body {
     padding: 20px;
   }
 }
+
+
+
+.stack-section {
+  background: #080313;
+  padding-bottom: 90px;
+}
+
+.stack-layout {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 24px;
+
+  align-items: start;
+}
+
+.technology-area {
+  min-width: 0;
+}
+
+.technology-area .technology-section {
+  padding: 0;
+}
+
+
+
+.stack-sidebar {
+  position: sticky;
+  top: 95px;
+
+  padding: 22px;
+
+  background: #110a1e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+}
+
+.stack-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.stack-label {
+  margin-bottom: 5px;
+
+  color: #8e849b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.stack-header h3 {
+  color: white;
+  font-size: 20px;
+}
+
+.stack-count {
+  min-width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--brand-gradient);
+
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Empty State */
+
+.empty-stack {
+  padding: 45px 10px;
+  text-align: center;
+}
+
+.empty-icon {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  margin: 0 auto 14px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.06);
+  color: #a69bae;
+
+  font-size: 22px;
+}
+
+.empty-stack h4 {
+  color: #ddd5e5;
+  font-size: 14px;
+}
+
+.empty-stack p {
+  margin-top: 8px;
+
+  color: #81778c;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+
+.stack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+
+
+.stack-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px;
+
+  background: #180f26;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 9px;
+}
+
+.stack-item-icon {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 7px;
+
+  background: #241735;
+}
+
+.stack-item-icon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.stack-item-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.stack-item-info h4 {
+  overflow: hidden;
+
+  color: white;
+  font-size: 12px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.stack-item-info p {
+  margin-top: 3px;
+
+  color: #847a90;
+  font-size: 10px;
+}
+
+.remove-item-btn {
+  width: 25px;
+  height: 25px;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 5px;
+
+  background: transparent;
+  color: #95899e;
+
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+.remove-item-btn:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: white;
+}
+
+/* Remove All */
+
+.remove-all-btn {
+  width: 100%;
+
+  margin-top: 15px;
+  padding: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+
+  background: transparent;
+  color: #c4baca;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.remove-all-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Added Card */
+
+.technology-card-added {
+  border-color: rgba(255, 93, 145, 0.7);
+}
+
+.added-btn {
+  cursor: not-allowed;
+
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+
+  color: #a99fb0;
+}
+
+@media (max-width: 1000px) {
+  .stack-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .stack-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .stack-sidebar {
+    padding: 18px;
+  }
+}
